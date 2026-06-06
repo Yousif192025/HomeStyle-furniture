@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="HomeStyle Furniture - معرض أثاث منزلي حديث يجمع بين الأناقة والفخامة. اكتشف مجموعات غرف النوم، المعيشة، السفرة، والمكتبي بأعلى معايير الجودة.">
+  <meta name="keywords" content="أثاث, أثاث حديث, غرف نوم, غرف معيشة, أثاث منزلي, HomeStyle, تصميم داخلي">
+  <meta name="author" content="HomeStyle Furniture">
+  <title>HomeStyle Furniture | أثاث عصري لمنزلك</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Cairo + Tajawal -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background-color: #fefaf5;
+      color: #2e2a28;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* RTL & smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* custom scroll */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #e9e0d5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #b87c4e;
+      border-radius: 10px;
+    }
+
+    /* container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* sections */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      color: #3a2c29;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #c79a6e;
+      margin: 12px auto 0;
+      border-radius: 4px;
+    }
+
+    /* header */
+    header {
+      background: #fffcf9;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(2px);
+      background-color: rgba(255,252,249,0.95);
+      transition: all 0.3s;
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 18px 0;
+    }
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #7c4f2d;
+    }
+    .logo span {
+      font-weight: 400;
+      color: #b17b50;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #3b2e2a;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover {
+      color: #b87c4e;
+    }
+    .whatsapp-btn {
+      background-color: #25D366;
+      padding: 8px 22px;
+      border-radius: 40px;
+      color: white !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .whatsapp-btn:hover {
+      background-color: #1da15a;
+      transform: scale(1.02);
+    }
+    .menu-icon {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #7c4f2d;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(105deg, #f2ede8 0%, #fff5ed 100%);
+      padding: 60px 0 80px;
+    }
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .hero-content {
+      flex: 1.2;
+    }
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #422b1f;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #5e4b3e;
+      margin-bottom: 32px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background-color: #b87c4e;
+      color: white;
+      padding: 12px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background-color: #9a633d;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #b87c4e;
+      color: #b87c4e;
+      padding: 12px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+    .btn-outline:hover {
+      background: #b87c4e;
+      color: white;
+    }
+    .hero-image {
+      flex: 1;
+    }
+    .hero-image img {
+      width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 25px 40px -12px rgba(0,0,0,0.2);
+      transition: transform 0.4s;
+    }
+    .hero-image img:hover {
+      transform: scale(1.01);
+    }
+
+    /* categories */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 28px;
+    }
+    .cat-card {
+      background: white;
+      border-radius: 28px;
+      padding: 24px 12px;
+      text-align: center;
+      transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+      border: 1px solid #f0e4d8;
+    }
+    .cat-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1);
+      border-color: #dec5ae;
+    }
+    .cat-card i {
+      font-size: 3rem;
+      color: #b87c4e;
+      margin-bottom: 16px;
+    }
+    .cat-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    /* products */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    .product-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      transition: all 0.3s;
+      box-shadow: 0 12px 24px -10px rgba(0,0,0,0.05);
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 36px -12px rgba(0,0,0,0.15);
+    }
+    .product-img {
+      height: 240px;
+      overflow: hidden;
+    }
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+    .product-card:hover .product-img img {
+      transform: scale(1.05);
+    }
+    .product-info {
+      padding: 20px;
+    }
+    .product-title {
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+    .product-desc {
+      color: #6b5b51;
+      font-size: 0.9rem;
+      margin: 8px 0;
+    }
+    .product-price {
+      font-weight: 800;
+      color: #b87c4e;
+      font-size: 1.3rem;
+      margin: 12px 0;
+    }
+    .btn-details {
+      background: #f4ede7;
+      border: none;
+      padding: 8px 0;
+      width: 100%;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #7c4f2d;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-details:hover {
+      background: #b87c4e;
+      color: white;
+    }
+
+    /* special offer + countdown */
+    .offer-banner {
+      background: linear-gradient(135deg, #2c241f, #4a372b);
+      border-radius: 48px;
+      padding: 48px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+    .offer-text h3 {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    .countdown {
+      display: flex;
+      gap: 20px;
+      margin: 24px 0;
+    }
+    .countdown-item {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      padding: 12px 18px;
+      border-radius: 20px;
+      text-align: center;
+      min-width: 70px;
+    }
+    .countdown-number {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    /* features grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
+      gap: 32px;
+      margin-top: 20px;
+    }
+    .feature-item {
+      text-align: center;
+      padding: 24px;
+      background: white;
+      border-radius: 32px;
+      transition: 0.2s;
+    }
+    .feature-item i {
+      font-size: 2.6rem;
+      color: #b87c4e;
+      margin-bottom: 16px;
+    }
+
+    /* testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 30px;
+    }
+    .testimonial {
+      background: white;
+      border-radius: 32px;
+      padding: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+    .testimonial p {
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .client img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* contact section */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      background: #fff6ef;
+      border-radius: 48px;
+      padding: 48px;
+    }
+    .contact-info {
+      flex: 1;
+    }
+    .contact-info i {
+      width: 38px;
+      color: #b87c4e;
+    }
+    .info-line {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    /* footer */
+    footer {
+      background: #231f1c;
+      color: #ddd2c8;
+      padding: 50px 0 30px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .social-icons a {
+      color: #ddd2c8;
+      font-size: 1.6rem;
+      margin-left: 20px;
+      transition: 0.2s;
+    }
+    .social-icons a:hover {
+      color: #b87c4e;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 48px;
+      border-top: 1px solid #3e332c;
+      padding-top: 24px;
+    }
+
+    /* responsive */
+    @media (max-width: 992px) {
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 20px;
+        background: #fffcf9;
+        padding: 28px;
+        margin-top: 20px;
+        border-radius: 32px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-icon {
+        display: block;
+      }
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+      .hero-grid {
+        flex-direction: column;
+      }
+    }
+    @media (max-width: 640px) {
+      .container {
+        padding: 0 18px;
+      }
+      .offer-banner {
+        padding: 28px;
+        text-align: center;
+        justify-content: center;
+      }
+      .countdown {
+        justify-content: center;
+      }
+    }
+    .lazy {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .lazy.loaded {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <h1>HomeStyle <span>Furniture</span></h1>
+      </div>
+      <div class="menu-icon" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#products">المنتجات</a></li>
+        <li><a href="#offers">العروض</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+        <li><a href="#" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> واتساب</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1>أثاث عصري يصنع الفرق في منزلك</h1>
+        <p>اكتشف مجموعتنا المتنوعة من غرف النوم والمعيشة والسفرة المصممة بأعلى معايير الجودة والأناقة.</p>
+        <div class="hero-buttons">
+          <a href="#products" class="btn-primary">تصفح المنتجات</a>
+          <a href="#contact" class="btn-outline">اطلب استشارة مجانية</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://placehold.co/800x600/f2ede8/b87c4e?text=Luxury+Living+Room" alt="أثاث منزلي فاخر" data-src="https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&w=800" class="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">التصنيفات الرئيسية</h2>
+      <div class="categories-grid">
+        <div class="cat-card"><i class="fas fa-bed"></i><h3>غرف نوم</h3></div>
+        <div class="cat-card"><i class="fas fa-couch"></i><h3>غرف معيشة</h3></div>
+        <div class="cat-card"><i class="fas fa-utensils"></i><h3>غرف سفرة</h3></div>
+        <div class="cat-card"><i class="fas fa-chair"></i><h3>ركنات</h3></div>
+        <div class="cat-card"><i class="fas fa-tv"></i><h3>وحدات تلفزيون</h3></div>
+        <div class="cat-card"><i class="fas fa-wardrobe"></i><h3>خزائن ودريسنج روم</h3></div>
+        <div class="cat-card"><i class="fas fa-baby-carriage"></i><h3>أثاث أطفال</h3></div>
+        <div class="cat-card"><i class="fas fa-laptop"></i><h3>أثاث مكتبي</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section id="products" style="background-color: #fefaf5;">
+    <div class="container">
+      <h2 class="section-title">منتجات مميزة</h2>
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Special Offer + Countdown -->
+  <section id="offers">
+    <div class="container">
+      <div class="offer-banner">
+        <div class="offer-text">
+          <h3>عرض خاص بمناسبة الافتتاح</h3>
+          <p>خصم يصل إلى 35% على تشكيلة مختارة من غرف النوم والمعيشة</p>
+          <div class="countdown" id="countdownTimer">
+            <div class="countdown-item"><div class="countdown-number" id="days">00</div><div>يوم</div></div>
+            <div class="countdown-item"><div class="countdown-number" id="hours">00</div><div>ساعة</div></div>
+            <div class="countdown-item"><div class="countdown-number" id="minutes">00</div><div>دقيقة</div></div>
+            <div class="countdown-item"><div class="countdown-number" id="seconds">00</div><div>ثانية</div></div>
+          </div>
+          <a href="#" class="btn-primary" style="background: white; color:#b87c4e; margin-top: 16px; display: inline-block;">استفد من العرض الآن</a>
+        </div>
+        <div><i class="fas fa-tags" style="font-size: 6rem; opacity:0.3;"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">لماذا نحن؟</h2>
+      <div class="features-grid">
+        <div class="feature-item"><i class="fas fa-award"></i><h3>جودة تصنيع عالية</h3><p>أفضل الخامات الأوروبية</p></div>
+        <div class="feature-item"><i class="fas fa-palette"></i><h3>تصاميم عصرية</h3><p>مواكبة لأحدث صيحات الموضة</p></div>
+        <div class="feature-item"><i class="fas fa-truck-fast"></i><h3>توصيل سريع</h3><p>لكافة مناطق المملكة</p></div>
+        <div class="feature-item"><i class="fas fa-headset"></i><h3>خدمة ما بعد البيع</h3><p>ضمان شامل وتركيب مجاني</p></div>
+        <div class="feature-item"><i class="fas fa-ruler-combined"></i><h3>التفصيل حسب الطلب</h3><p>نلبي احتياجاتك الخاصة</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section style="background:#F9F3EC;">
+    <div class="container">
+      <h2 class="section-title">آراء عملائنا</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial"><p>“أثاث راقي وخامات ممتازة، خدمة التوصيل كانت سريعة جداً. أنصح بالتعامل مع HomeStyle.”</p><div class="client"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="عميلة"><div><strong>أمل عبدالله</strong><br>جدة</div></div></div>
+        <div class="testimonial"><p>“التصاميم العصرية جعلت منزلي يبدو فاخراً، ودقة التنفيذ رائعة. شكراً لفريق العمل.”</p><div class="client"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="عميل"><div><strong>خالد الفهد</strong><br>الرياض</div></div></div>
+        <div class="testimonial"><p>“رائع! استشارة مجانية ساعدتني في اختيار قطع تتوافق مع مساحة بيتي.”</p><div class="client"><img src="https://randomuser.me/api/portraits/women/45.jpg" alt="عميلة"><div><strong>سارة المنصور</strong><br>الخبر</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact section -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3 style="font-size: 1.8rem; margin-bottom: 20px;">تواصل معنا</h3>
+          <div class="info-line"><i class="fas fa-phone-alt"></i><span>+966 50 123 4567</span></div>
+          <div class="info-line"><i class="fab fa-whatsapp"></i><span>+966 55 987 6543</span></div>
+          <div class="info-line"><i class="fas fa-envelope"></i><span>info@homestyle-furniture.com</span></div>
+          <div class="info-line"><i class="fas fa-map-marker-alt"></i><span>طريق الملك فهد، الرياض، المملكة العربية السعودية</span></div>
+          <div class="info-line"><i class="fas fa-clock"></i><span>من السبت إلى الخميس 9:00 صباحاً – 10:00 مساءً</span></div>
+        </div>
+        <div style="flex:1; min-width:200px;"><iframe width="100%" height="220" style="border-radius:28px; border:0;" loading="lazy" src="https://maps.google.com/maps?q=Riyadh%20King%20Fahd%20Road&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>روابط سريعة</h4><ul style="list-style:none; margin-top:12px;"><li><a href="#products" style="color:#ddd;">منتجاتنا</a></li><li><a href="#offers" style="color:#ddd;">العروض</a></li><li><a href="#contact" style="color:#ddd;">تواصل</a></li></ul></div>
+      <div><h4>تابعنا</h4><div class="social-icons" style="margin-top:12px;">
+        <a href="https://instagram.com/homestyle" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://facebook.com/homestyle" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://tiktok.com/@homestyle" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://snapchat.com/add/homestyle" target="_blank"><i class="fab fa-snapchat"></i></a>
+        <a href="https://x.com/homestyle" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="whatsapp-btn" style="background:transparent; padding:0; font-size:1.6rem;"><i class="fab fa-whatsapp"></i></a>
+      </div></div>
+    </div>
+    <div class="copyright"><p>© 2026 HomeStyle Furniture – جميع الحقوق محفوظة. تصميم عصري بأناقة.</p></div>
+  </div>
+</footer>
+
+<script>
+  // Lazy loading images
+  const lazyImages = document.querySelectorAll('.lazy');
+  const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const img = entry.target;
+        if(img.dataset.src){
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+        }
+        img.classList.add('loaded');
+        imageObserver.unobserve(img);
+      }
+    });
+  });
+  lazyImages.forEach(img => imageObserver.observe(img));
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Products Data (تجريبية)
+  const products = [
+    { name: "غرفة نوم رويال", desc: "مودرن خشب زان", price: "4,250 SAR", img: "https://images.pexels.com/photos/1648771/pexels-photo-1648771.jpeg?auto=compress&cs=tinysrgb&w=400" },
+    { name: "كنب أنجليكا", desc: "مخمل رمادي فاخر", price: "3,800 SAR", img: "https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?auto=compress&cs=tinysrgb&w=400" },
+    { name: "طقم سفرة لونا", desc: "زجاج + كراسي جلد", price: "2,990 SAR", img: "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=400" },
+    { name: "ركنة مودرن", desc: "زاوية قابلة للتمديد", price: "3,450 SAR", img: "https://images.pexels.com/photos/1350788/pexels-photo-1350788.jpeg?auto=compress&cs=tinysrgb&w=400" }
+  ];
+  const productsGrid = document.getElementById('productsGrid');
+  if(productsGrid){
+    products.forEach(prod => {
+      const card = document.createElement('div');
+      card.className = 'product-card';
+      card.innerHTML = `
+        <div class="product-img"><img data-src="${prod.img}" class="lazy" alt="${prod.name}" style="width:100%; height:100%; object-fit:cover;"></div>
+        <div class="product-info">
+          <div class="product-title">${prod.name}</div>
+          <div class="product-desc">${prod.desc}</div>
+          <div class="product-price">${prod.price}</div>
+          <button class="btn-details">عرض التفاصيل <i class="fas fa-arrow-left"></i></button>
+        </div>
+      `;
+      productsGrid.appendChild(card);
+    });
+    // re-trigger lazy after dynamic load
+    const newLazy = document.querySelectorAll('.lazy');
+    newLazy.forEach(img => {
+      if(img.dataset.src) imageObserver.observe(img);
+    });
+  }
+
+  // Countdown timer (3 days from now)
+  function getNextDeadline(){
+    let deadline = new Date();
+    deadline.setDate(deadline.getDate() + 3);
+    deadline.setHours(23, 59, 59);
+    return deadline;
+  }
+  let countdownInterval;
+  function updateCountdown(){
+    const now = new Date();
+    const deadline = getNextDeadline();
+    const diff = deadline - now;
+    if(diff <= 0){
+      document.getElementById('days').innerText = '00';
+      document.getElementById('hours').innerText = '00';
+      document.getElementById('minutes').innerText = '00';
+      document.getElementById('seconds').innerText = '00';
+      clearInterval(countdownInterval);
+      return;
+    }
+    const days = Math.floor(diff/(1000*60*60*24));
+    const hours = Math.floor((diff/(1000*60*60))%24);
+    const minutes = Math.floor((diff/(1000*60))%60);
+    const seconds = Math.floor((diff/1000)%60);
+    document.getElementById('days').innerText = days<10?'0'+days:days;
+    document.getElementById('hours').innerText = hours<10?'0'+hours:hours;
+    document.getElementById('minutes').innerText = minutes<10?'0'+minutes:minutes;
+    document.getElementById('seconds').innerText = seconds<10?'0'+seconds:seconds;
+  }
+  countdownInterval = setInterval(updateCountdown,1000);
+  updateCountdown();
+
+  // Smooth animations on scroll (reveal using intersection observer basic)
+  const fadeElements = document.querySelectorAll('.cat-card, .product-card, .feature-item, .testimonial, .contact-grid');
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0px)';
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold:0.1 });
+  fadeElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(25px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    fadeObserver.observe(el);
+  });
+  document.querySelectorAll('.btn-details').forEach(btn => {
+    btn.addEventListener('click', () => alert('سيتم توجيهك لصفحة المنتج قريباً | قيد التطوير'));
+  });
+  document.querySelector('.whatsapp-btn')?.addEventListener('click', (e) => { e.preventDefault(); alert("تم توجيهك إلى واتساب +966551234567"); });
+  document.querySelectorAll('.social-icons a').forEach(link => {
+    link.addEventListener('click', (e) => { if(link.getAttribute('href') !== '#') return; e.preventDefault(); alert('رابط واتساب تجريبي'); });
+  });
+</script>
+</body>
+</html>
