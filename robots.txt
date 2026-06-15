@@ -1,1 +1,4 @@
-
+User-agent: *
+Allow: /
+Sitemap: https://home-style-furniture-ten.vercel.app/sitemap.xml
+Sitemap: https://home-style-furniture-ten.vercel.app/image-sitemap.xml
