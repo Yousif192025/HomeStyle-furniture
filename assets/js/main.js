@@ -1,5 +1,4 @@
 // DOM Elements and Data
-
 const galleryData = Array.from({ length: 12 }, (_, i) => `gallery-${String(i+1).padStart(2,'0')}.webp`);
 const projectsData = [
     { name: 'فيلا الشاطئ', desc: 'غرفة معيشة مودرن', img: 'project-1.webp' },
