@@ -13,7 +13,7 @@
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="HomeStyle | أثاث عصري وفاخر بتصاميم حصرية">
     <meta property="og:description" content="أثاث منزلي بتصاميم عصرية وجودة عالية. شاهد مجموعتنا الجديدة لغرف النوم والمعيشة والسفرة.">
-    <meta property="og:image" content="assets/images/hero/hero-image.webp">
+    <meta property="og:image" content="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800">
     <meta property="og:url" content="https://home-style-furniture-ten.vercel.app/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_SA">
@@ -22,19 +22,15 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="HomeStyle | أثاث عصري وفاخر">
     <meta name="twitter:description" content="أثاث منزلي بتصاميم عصرية وجودة عالية.">
-    <meta name="twitter:image" content="assets/images/hero/hero-image.webp">
+    <meta name="twitter:image" content="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800">
 
-    <!-- Preload Critical Assets -->
-    <link rel="preload" href="assets/images/hero/hero-image.webp" as="image" fetchpriority="high">
+    <!-- Preconnect for external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.pexels.com">
 
     <!-- AOS Library (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- External CSS (Non-Critical) -->
-    <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
 
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -231,7 +227,7 @@
         /* Gallery Masonry */
         .gallery-masonry {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 1.2rem;
         }
         .gallery-item {
@@ -493,7 +489,6 @@
             background: #A87D52;
             transform: translateY(-3px);
         }
-        /* Responsive adjustments for floating buttons */
         @media (max-width: 480px) {
             .floating-whatsapp {
                 width: 50px;
@@ -509,6 +504,25 @@
                 bottom: 75px;
                 right: 15px;
             }
+        }
+        /* Placeholder for missing images */
+        .img-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #E8DDD0, #D4C5B5);
+            color: #8B7355;
+            font-size: 1.2rem;
+            font-weight: bold;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            padding: 1rem;
+        }
+        .img-placeholder i {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 0.5rem;
         }
     </style>
 </head>
@@ -538,7 +552,7 @@
                     </div>
                 </div>
                 <div class="hero-image" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
-                    <img src="assets/images/hero/hero-image.webp" alt="غرفة معيشة عصرية من HomeStyle - تصميم فاخر" width="600" height="400" fetchpriority="high">
+                    <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800" alt="غرفة معيشة عصرية من HomeStyle - تصميم فاخر" width="600" height="400" fetchpriority="high">
                 </div>
             </div>
         </section>
@@ -660,12 +674,9 @@
     <!-- AOS Library (Animate On Scroll) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- External JavaScript (deferred) -->
-    <script src="assets/js/main.js" defer></script>
-
     <script>
         // =========================================
-        // 1. AOS INIT - تأكد من استدعائه بعد تحميل المكتبة
+        // 1. AOS INIT
         // =========================================
         document.addEventListener('DOMContentLoaded', function() {
             AOS.init({
@@ -677,15 +688,15 @@
         });
 
         // =========================================
-        // 2. Gallery Data
+        // 2. Gallery Data - روابط صور حقيقية من Pexels
         // =========================================
         const galleryImages = [
-            { src: 'assets/images/gallery/living-room-1.webp', title: 'غرفة معيشة مودرن' },
-            { src: 'assets/images/gallery/bedroom-1.webp', title: 'غرفة نوم كلاسيك' },
-            { src: 'assets/images/gallery/dining-1.webp', title: 'طقم سفرة فاخر' },
-            { src: 'assets/images/gallery/office-1.webp', title: 'مكتب عصري' },
-            { src: 'assets/images/gallery/living-room-2.webp', title: 'ركنة زاوية' },
-            { src: 'assets/images/gallery/bedroom-2.webp', title: 'دريسنج روم' }
+            { src: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400', title: 'غرفة معيشة مودرن' },
+            { src: 'https://images.pexels.com/photos/1648771/pexels-photo-1648771.jpeg?auto=compress&cs=tinysrgb&w=400', title: 'غرفة نوم كلاسيك' },
+            { src: 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=400', title: 'طقم سفرة فاخر' },
+            { src: 'https://images.pexels.com/photos/6474476/pexels-photo-6474476.jpeg?auto=compress&cs=tinysrgb&w=400', title: 'مكتب عصري' },
+            { src: 'https://images.pexels.com/photos/1350788/pexels-photo-1350788.jpeg?auto=compress&cs=tinysrgb&w=400', title: 'ركنة زاوية' },
+            { src: 'https://images.pexels.com/photos/97083/wardrobe-cupboard-closet-luxury-97083.jpeg?auto=compress&cs=tinysrgb&w=400', title: 'دريسنج روم' }
         ];
 
         function renderGallery() {
@@ -693,20 +704,25 @@
             if (!container) return;
             container.innerHTML = galleryImages.map((item, index) => `
                 <div class="gallery-item" data-aos="fade-up" data-aos-delay="${index * 80}">
-                    <img src="${item.src}" alt="${item.title}" loading="lazy">
+                    <img src="${item.src}" alt="${item.title}" loading="lazy" 
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="img-placeholder" style="display:none; flex-direction:column;">
+                        <i class="fas fa-image"></i>
+                        <span>${item.title}</span>
+                    </div>
                     <div class="overlay"><span>${item.title}</span></div>
                 </div>
             `).join('');
         }
 
         // =========================================
-        // 3. Projects Data
+        // 3. Projects Data - روابط صور حقيقية
         // =========================================
         const projects = [
-            { name: 'فيلا الشاطئ', category: 'غرفة معيشة مودرن', img: 'assets/images/projects/project-1.webp' },
-            { name: 'قصر اليمامة', category: 'دريسنج روم فاخر', img: 'assets/images/projects/project-2.webp' },
-            { name: 'شقة العليا', category: 'طقم سفرة زجاج', img: 'assets/images/projects/project-3.webp' },
-            { name: 'استراحة الساحل', category: 'ركنة زاوية مودرن', img: 'assets/images/projects/project-4.webp' }
+            { name: 'فيلا الشاطئ', category: 'غرفة معيشة مودرن', img: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400' },
+            { name: 'قصر اليمامة', category: 'دريسنج روم فاخر', img: 'https://images.pexels.com/photos/97083/wardrobe-cupboard-closet-luxury-97083.jpeg?auto=compress&cs=tinysrgb&w=400' },
+            { name: 'شقة العليا', category: 'طقم سفرة زجاج', img: 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=400' },
+            { name: 'استراحة الساحل', category: 'ركنة زاوية مودرن', img: 'https://images.pexels.com/photos/1350788/pexels-photo-1350788.jpeg?auto=compress&cs=tinysrgb&w=400' }
         ];
 
         function renderProjects() {
@@ -714,7 +730,8 @@
             if (!container) return;
             container.innerHTML = projects.map((item, index) => `
                 <div class="project-card" data-aos="fade-up" data-aos-delay="${index * 100}">
-                    <img src="${item.img}" alt="${item.name}" loading="lazy">
+                    <img src="${item.img}" alt="${item.name}" loading="lazy"
+                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22220%22%3E%3Crect fill=%22%23E8DDD0%22 width=%22400%22 height=%22220%22/%3E%3Ctext x=%22200%22 y=%22110%22 text-anchor=%22middle%22 font-size=%2220%22 fill=%22%238B7355%22%3E${encodeURIComponent(item.name)}%3C/text%3E%3C/svg%3E'">
                     <div class="info">
                         <h3>${item.name}</h3>
                         <p style="color:#C49A6C; font-weight:500;">${item.category}</p>
@@ -727,9 +744,9 @@
         // 4. Testimonials Slider
         // =========================================
         const testimonials = [
-            { name: 'أمل عبدالله', city: 'جدة', text: 'أثاث راقي وخامات ممتازة، خدمة التوصيل كانت سريعة جداً.', avatar: 'assets/images/avatars/avatar-1.webp' },
-            { name: 'خالد الفهد', city: 'الرياض', text: 'التصاميم العصرية جعلت منزلي يبدو فاخراً، ودقة التنفيذ رائعة.', avatar: 'assets/images/avatars/avatar-2.webp' },
-            { name: 'سارة المنصور', city: 'الخبر', text: 'رائع! استشارة مجانية ساعدتني في اختيار قطع تتوافق مع مساحة بيتي.', avatar: 'assets/images/avatars/avatar-3.webp' }
+            { name: 'أمل عبدالله', city: 'جدة', text: 'أثاث راقي وخامات ممتازة، خدمة التوصيل كانت سريعة جداً.' },
+            { name: 'خالد الفهد', city: 'الرياض', text: 'التصاميم العصرية جعلت منزلي يبدو فاخراً، ودقة التنفيذ رائعة.' },
+            { name: 'سارة المنصور', city: 'الخبر', text: 'رائع! استشارة مجانية ساعدتني في اختيار قطع تتوافق مع مساحة بيتي.' }
         ];
 
         let currentSlide = 0;
@@ -738,12 +755,15 @@
         function renderTestimonials() {
             const container = document.getElementById('sliderContainer');
             if (!container) return;
-            container.innerHTML = testimonials.map(item => `
+            const avatarColors = ['#C49A6C', '#A87D52', '#8B5E3C'];
+            container.innerHTML = testimonials.map((item, idx) => `
                 <div class="testimonial-card">
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p style="font-size:1.1rem; margin:1rem 0;">"${item.text}"</p>
                     <div class="client">
-                        <img src="${item.avatar}" alt="${item.name}">
+                        <div style="width:50px;height:50px;border-radius:50%;background:${avatarColors[idx % avatarColors.length]};display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.5rem;font-weight:bold;">
+                            ${item.name.charAt(0)}
+                        </div>
                         <div><strong>${item.name}</strong><br><span style="color:#777; font-size:0.9rem;">${item.city}</span></div>
                     </div>
                 </div>
@@ -756,7 +776,6 @@
             if (!container) return;
             const total = container.children.length;
             if (total === 0) return;
-            // Wrap currentSlide
             if (currentSlide >= total) currentSlide = 0;
             if (currentSlide < 0) currentSlide = total - 1;
             container.style.transform = `translateX(-${currentSlide * 100}%)`;
@@ -808,15 +827,14 @@
             `).join('');
         }
 
-        function toggleFaq(element) {
+        window.toggleFaq = function(element) {
             const parent = element.closest('.faq-item');
             if (!parent) return;
-            // Close others
             document.querySelectorAll('.faq-item').forEach(el => {
                 if (el !== parent) el.classList.remove('active');
             });
             parent.classList.toggle('active');
-        }
+        };
 
         // =========================================
         // 6. Back to Top Button
@@ -858,23 +876,19 @@
             setupSliderControls();
             resetInterval();
 
-            // تأكد من إعادة تهيئة AOS بعد إضافة العناصر الديناميكية
             setTimeout(() => {
-                AOS.refresh();
-            }, 200);
+                if (typeof AOS !== 'undefined') AOS.refresh();
+            }, 300);
         });
 
         // =========================================
-        // 9. احتياطي: إذا لم يتم تحميل AOS
+        // 9. Fallback if images fail to load
         // =========================================
         window.addEventListener('load', function() {
-            if (typeof AOS !== 'undefined') {
-                AOS.refresh();
-            }
+            if (typeof AOS !== 'undefined') AOS.refresh();
         });
     </script>
 
-    <!-- Fallback for AOS if not loaded -->
     <noscript>
         <style>
             [data-aos] {
