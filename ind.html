@@ -2,7 +2,6 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>HomeStyle | أثاث عصري وفاخر بتصاميم حصرية - السعودية</title>
     <meta name="description" content="اكتشف تشكيلتنا الفاخرة من الأثاث العصري والكلاسيكي. غرف نوم، معيشة، سفرة بتصاميم تناسب ذوقك. توصيل سريع وضمان شامل في الرياض وجدة والدمام.">
@@ -14,7 +13,7 @@
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="HomeStyle | أثاث عصري وفاخر بتصاميم حصرية">
     <meta property="og:description" content="أثاث منزلي بتصاميم عصرية وجودة عالية. شاهد مجموعتنا الجديدة لغرف النوم والمعيشة والسفرة.">
-    <meta property="og:image" content="https://home-style-furniture-ten.vercel.app/assets/images/hero/hero-image.webp">
+    <meta property="og:image" content="assets/images/hero/hero-image.webp">
     <meta property="og:url" content="https://home-style-furniture-ten.vercel.app/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_SA">
@@ -23,16 +22,22 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="HomeStyle | أثاث عصري وفاخر">
     <meta name="twitter:description" content="أثاث منزلي بتصاميم عصرية وجودة عالية.">
-    <meta name="twitter:image" content="https://home-style-furniture-ten.vercel.app/assets/images/hero/hero-image.webp">
+    <meta name="twitter:image" content="assets/images/hero/hero-image.webp">
 
     <!-- Preload Critical Assets -->
     <link rel="preload" href="assets/images/hero/hero-image.webp" as="image" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- AOS Library (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- External CSS (Non-Critical) -->
     <link rel="stylesheet" href="assets/css/style.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Critical CSS (Above the Fold) -->
     <style>
@@ -45,7 +50,7 @@
         body {
             font-family: 'Segoe UI', 'Tahoma', 'Cairo', sans-serif;
             line-height: 1.6;
-            background-color: #fff;
+            background-color: #F9F6F0;
             color: #1E2A38;
             opacity: 0;
             animation: fadeIn 0.5s ease forwards;
@@ -57,24 +62,61 @@
             margin: 0 auto;
             padding: 0 1rem;
         }
-        /* Navbar Critical */
+        /* Navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
             flex-wrap: wrap;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(196, 154, 108, 0.15);
         }
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
             color: #C49A6C;
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        /* Hero Critical */
+        .logo i {
+            font-size: 2rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #1E2A38;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #C49A6C;
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        /* Hero */
         .hero {
             background: linear-gradient(135deg, #F9F6F0 0%, #FFFFFF 100%);
-            padding: 2rem 0;
+            padding: 3rem 0 4rem;
         }
         .hero-grid {
             display: flex;
@@ -85,64 +127,417 @@
         .hero-content {
             flex: 1;
         }
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #4A5A6A;
+            margin-bottom: 1.5rem;
+        }
         .hero-image {
             flex: 1;
         }
         .hero-image img {
             width: 100%;
             height: auto;
-            border-radius: 1rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            transition: transform 0.4s;
+        }
+        .hero-image img:hover {
+            transform: scale(1.01);
         }
         .btn {
             display: inline-block;
-            padding: 0.8rem 1.8rem;
-            border-radius: 2rem;
+            padding: 0.8rem 2rem;
+            border-radius: 2.5rem;
             text-decoration: none;
             font-weight: bold;
-            transition: transform 0.2s, background 0.2s;
-            margin-left: 1rem;
-            margin-top: 1rem;
+            transition: all 0.3s ease;
+            margin-left: 0.8rem;
+            margin-top: 0.8rem;
+            border: none;
+            cursor: pointer;
         }
         .btn-primary {
             background-color: #C49A6C;
             color: #fff;
+            box-shadow: 0 4px 15px rgba(196, 154, 108, 0.3);
+        }
+        .btn-primary:hover {
+            background-color: #A87D52;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(196, 154, 108, 0.4);
         }
         .btn-outline {
             border: 2px solid #C49A6C;
             color: #C49A6C;
+            background: transparent;
         }
+        .btn-outline:hover {
+            background: #C49A6C;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+        }
+        .bg-light {
+            background: #FFFFFF;
+        }
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 2.5rem;
+            color: #1E2A38;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #C49A6C;
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(196, 154, 108, 0.08);
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border-color: rgba(196, 154, 108, 0.2);
+        }
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        /* Gallery Masonry */
+        .gallery-masonry {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.2rem;
+        }
+        .gallery-item {
+            border-radius: 1rem;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            aspect-ratio: 1/1;
+            background: #E8DDD0;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.6));
+            color: #fff;
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .project-card .info {
+            padding: 1.5rem;
+        }
+        /* Testimonials Slider */
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .testimonial-card {
+            flex: 0 0 100%;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            text-align: center;
+        }
+        .testimonial-card .stars {
+            color: #F5A623;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+        .testimonial-card .client {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .testimonial-card .client img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .slider-btn {
+            background: #C49A6C;
+            color: #fff;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .slider-btn:hover {
+            background: #A87D52;
+            transform: scale(1.05);
+        }
+        /* FAQ Accordion */
+        .faq-accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .faq-question {
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: #f5f0eb;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+            color: #4A5A6A;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 1.5rem 1.5rem;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #C49A6C, #A87D52);
+            color: #fff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+        .cta-section .btn-outline {
+            border-color: #fff;
+            color: #fff;
+        }
+        .cta-section .btn-outline:hover {
+            background: #fff;
+            color: #A87D52;
+        }
+        /* Footer */
+        footer {
+            background: #1E2A38;
+            color: #E8DDD0;
+            padding: 3rem 0 1.5rem;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-content a {
+            color: #C49A6C;
+            text-decoration: none;
+        }
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #2a3a4a;
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+        /* Responsive */
         @media (max-width: 768px) {
             .hero-grid { flex-direction: column; }
-            .btn { display: block; text-align: center; margin: 0.5rem 0; }
+            .btn { display: block; text-align: center; margin: 0.5rem 0; width: 100%; }
+            .nav-links { gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+            .gallery-masonry { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 480px) {
+            .gallery-masonry { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+        /* Floating WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25D366;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s ease;
+            z-index: 999;
+            text-decoration: none;
+        }
+        .floating-whatsapp:hover {
+            transform: scale(1.08);
+        }
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background: #C49A6C;
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(196, 154, 108, 0.3);
+        }
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-to-top:hover {
+            background: #A87D52;
+            transform: translateY(-3px);
+        }
+        /* Responsive adjustments for floating buttons */
+        @media (max-width: 480px) {
+            .floating-whatsapp {
+                width: 50px;
+                height: 50px;
+                font-size: 1.6rem;
+                bottom: 15px;
+                left: 15px;
+            }
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                bottom: 75px;
+                right: 15px;
+            }
         }
     </style>
 </head>
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar container" aria-label="القائمة الرئيسية">
-        <a href="/" class="logo">🏠 HomeStyle</a>
-        <ul class="nav-links" style="display: flex; gap: 1.5rem; list-style: none;">
+    <nav class="navbar container" aria-label="القائمة الرئيسية" data-aos="fade-down" data-aos-duration="600">
+        <a href="/" class="logo"><i class="fas fa-crown"></i> HomeStyle</a>
+        <ul class="nav-links">
             <li><a href="#features">المميزات</a></li>
             <li><a href="#gallery">المعرض</a></li>
             <li><a href="#projects">مشاريعنا</a></li>
-            <li><a href="#contact" aria-label="اتصل بنا">اتصل بنا</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
         </ul>
     </nav>
 
     <main>
         <!-- Hero Section -->
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="container hero-grid">
-                <div class="hero-content">
+                <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
                     <h1>أثاث عصري <span style="color:#C49A6C;">يصنع الفرق</span> في منزلك</h1>
                     <p>تصاميم فاخرة وجودة أوروبية وخشب طبيعي. نصنع لك الأثاث الذي يعكس أناقتك.</p>
                     <div>
-                        <a href="https://wa.me/966501234567?text=أريد%20معرفة%20المزيد%20عن%20الأثاث" class="btn btn-primary" target="_blank" rel="noopener">📱 واتساب</a>
-                        <a href="#quote" class="btn btn-outline" id="quoteBtn">📋 طلب عرض سعر</a>
+                        <a href="https://wa.me/966501234567?text=أريد%20معرفة%20المزيد%20عن%20الأثاث" class="btn btn-primary" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> واتساب</a>
+                        <a href="#contact" class="btn btn-outline"><i class="fas fa-file-invoice"></i> طلب عرض سعر</a>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="hero-image" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
                     <img src="assets/images/hero/hero-image.webp" alt="غرفة معيشة عصرية من HomeStyle - تصميم فاخر" width="600" height="400" fetchpriority="high">
                 </div>
             </div>
@@ -151,20 +546,32 @@
         <!-- Features Section -->
         <section id="features" class="section">
             <div class="container">
-                <h2 class="section-title">لماذا تختار HomeStyle؟</h2>
-                <div class="features-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 2rem;">
-                    <div class="feature-card"><h3>🔨 جودة التصنيع</h3><p>أفضل خامات الأخشاب الأوروبية ودهانات صديقة للبيئة.</p></div>
-                    <div class="feature-card"><h3>⚡ سرعة التنفيذ</h3><p>تسليم خلال 10-14 يوم عمل مع فريق متخصص.</p></div>
-                    <div class="feature-card"><h3>✏️ التصميم حسب الطلب</h3><p>نقوم بتصميم قطع فريدة تناسب مساحتك تماماً.</p></div>
-                    <div class="feature-card"><h3>🛡️ ضمان وخدمة ما بعد البيع</h3><p>ضمان 5 سنوات شامل وتركيب مجاني.</p></div>
+                <h2 class="section-title" data-aos="fade-up">لماذا تختار HomeStyle؟</h2>
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+                        <h3><i class="fas fa-hammer" style="color:#C49A6C;"></i> جودة التصنيع</h3>
+                        <p>أفضل خامات الأخشاب الأوروبية ودهانات صديقة للبيئة.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3><i class="fas fa-bolt" style="color:#C49A6C;"></i> سرعة التنفيذ</h3>
+                        <p>تسليم خلال 10-14 يوم عمل مع فريق متخصص.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3><i class="fas fa-pencil-ruler" style="color:#C49A6C;"></i> التصميم حسب الطلب</h3>
+                        <p>نقوم بتصميم قطع فريدة تناسب مساحتك تماماً.</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3><i class="fas fa-shield-alt" style="color:#C49A6C;"></i> ضمان وخدمة ما بعد البيع</h3>
+                        <p>ضمان 5 سنوات شامل وتركيب مجاني.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Section (Masonry with Lightbox) -->
+        <!-- Gallery Section -->
         <section id="gallery" class="section bg-light">
             <div class="container">
-                <h2 class="section-title">معرض التصاميم</h2>
+                <h2 class="section-title" data-aos="fade-up">معرض التصاميم</h2>
                 <div class="gallery-masonry" id="galleryContainer"></div>
             </div>
         </section>
@@ -172,7 +579,7 @@
         <!-- Projects Showcase -->
         <section id="projects" class="section">
             <div class="container">
-                <h2 class="section-title">أحدث مشاريعنا</h2>
+                <h2 class="section-title" data-aos="fade-up">أحدث مشاريعنا</h2>
                 <div class="projects-grid" id="projectsContainer"></div>
             </div>
         </section>
@@ -180,12 +587,12 @@
         <!-- Testimonials Slider -->
         <section id="testimonials" class="section bg-light">
             <div class="container">
-                <h2 class="section-title">آراء عملائنا</h2>
-                <div class="testimonial-slider" id="testimonialSlider">
+                <h2 class="section-title" data-aos="fade-up">آراء عملائنا</h2>
+                <div class="testimonial-slider" data-aos="fade-up" data-aos-delay="100">
                     <div class="slider-container" id="sliderContainer"></div>
                     <div class="slider-controls">
-                        <button class="slider-btn prev" aria-label="السابق">❮</button>
-                        <button class="slider-btn next" aria-label="التالي">❯</button>
+                        <button class="slider-btn prev" aria-label="السابق"><i class="fas fa-chevron-right"></i></button>
+                        <button class="slider-btn next" aria-label="التالي"><i class="fas fa-chevron-left"></i></button>
                     </div>
                 </div>
             </div>
@@ -194,19 +601,19 @@
         <!-- FAQ Accordion -->
         <section id="faq" class="section">
             <div class="container">
-                <h2 class="section-title">الأسئلة الشائعة</h2>
+                <h2 class="section-title" data-aos="fade-up">الأسئلة الشائعة</h2>
                 <div class="faq-accordion" id="faqContainer"></div>
             </div>
         </section>
 
         <!-- CTA Section -->
         <section id="contact" class="cta-section">
-            <div class="container">
+            <div class="container" data-aos="zoom-in" data-aos-duration="600">
                 <h2>هل لديك استفسار أو تريد عرض سعر؟</h2>
                 <p>فريقنا جاهز لمساعدتك وتقديم استشارة مجانية.</p>
                 <div>
-                    <a href="https://wa.me/966501234567" class="btn btn-primary" target="_blank">واتساب</a>
-                    <a href="tel:+966501234567" class="btn btn-outline">اتصال مباشر</a>
+                    <a href="https://wa.me/966501234567" class="btn btn-primary" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
+                    <a href="tel:+966501234567" class="btn btn-outline"><i class="fas fa-phone"></i> اتصال مباشر</a>
                 </div>
             </div>
         </section>
@@ -216,34 +623,265 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div><h3>HomeStyle</h3><p>أثاث يروي قصتك.</p></div>
-                <div><h3>تواصل معنا</h3><p>📍 الرياض، طريق الملك فهد<br>📞 <a href="tel:+966501234567">+966 50 123 4567</a><br>✉️ <a href="mailto:info@homestyle.com">info@homestyle.com</a></p></div>
-                <div><h3>تابعنا</h3><div class="social-links"><a href="#" aria-label="فيسبوك">FB</a> | <a href="#" aria-label="انستقرام">IG</a> | <a href="#" aria-label="تويتر">X</a></div></div>
+                <div data-aos="fade-up">
+                    <h3><i class="fas fa-crown" style="color:#C49A6C;"></i> HomeStyle</h3>
+                    <p>أثاث يروي قصتك.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3>تواصل معنا</h3>
+                    <p><i class="fas fa-map-marker-alt" style="color:#C49A6C;"></i> الرياض، طريق الملك فهد</p>
+                    <p><i class="fas fa-phone" style="color:#C49A6C;"></i> <a href="tel:+966501234567">+966 50 123 4567</a></p>
+                    <p><i class="fas fa-envelope" style="color:#C49A6C;"></i> <a href="mailto:info@homestyle.com">info@homestyle.com</a></p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3>تابعنا</h3>
+                    <div class="social-links" style="display:flex; gap:1rem; font-size:1.5rem;">
+                        <a href="#" aria-label="فيسبوك"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="انستقرام"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="تويتر"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="تيك توك"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
             </div>
             <div class="copyright">© 2026 HomeStyle Furniture. جميع الحقوق محفوظة.</div>
         </div>
     </footer>
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FurnitureStore",
-      "name": "HomeStyle Furniture",
-      "image": "https://home-style-furniture-ten.vercel.app/assets/images/hero/hero-image.webp",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "طريق الملك فهد",
-        "addressLocality": "الرياض",
-        "addressCountry": "SA"
-      },
-      "telephone": "+966501234567",
-      "openingHours": "Sa-Th 09:00-22:00",
-      "priceRange": "$$"
-    }
-    </script>
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/966501234567" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="العودة للأعلى">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- AOS Library (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- External JavaScript (deferred) -->
     <script src="assets/js/main.js" defer></script>
+
+    <script>
+        // =========================================
+        // 1. AOS INIT - تأكد من استدعائه بعد تحميل المكتبة
+        // =========================================
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 700,
+                once: true,
+                offset: 80,
+                easing: 'ease-in-out'
+            });
+        });
+
+        // =========================================
+        // 2. Gallery Data
+        // =========================================
+        const galleryImages = [
+            { src: 'assets/images/gallery/living-room-1.webp', title: 'غرفة معيشة مودرن' },
+            { src: 'assets/images/gallery/bedroom-1.webp', title: 'غرفة نوم كلاسيك' },
+            { src: 'assets/images/gallery/dining-1.webp', title: 'طقم سفرة فاخر' },
+            { src: 'assets/images/gallery/office-1.webp', title: 'مكتب عصري' },
+            { src: 'assets/images/gallery/living-room-2.webp', title: 'ركنة زاوية' },
+            { src: 'assets/images/gallery/bedroom-2.webp', title: 'دريسنج روم' }
+        ];
+
+        function renderGallery() {
+            const container = document.getElementById('galleryContainer');
+            if (!container) return;
+            container.innerHTML = galleryImages.map((item, index) => `
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="${index * 80}">
+                    <img src="${item.src}" alt="${item.title}" loading="lazy">
+                    <div class="overlay"><span>${item.title}</span></div>
+                </div>
+            `).join('');
+        }
+
+        // =========================================
+        // 3. Projects Data
+        // =========================================
+        const projects = [
+            { name: 'فيلا الشاطئ', category: 'غرفة معيشة مودرن', img: 'assets/images/projects/project-1.webp' },
+            { name: 'قصر اليمامة', category: 'دريسنج روم فاخر', img: 'assets/images/projects/project-2.webp' },
+            { name: 'شقة العليا', category: 'طقم سفرة زجاج', img: 'assets/images/projects/project-3.webp' },
+            { name: 'استراحة الساحل', category: 'ركنة زاوية مودرن', img: 'assets/images/projects/project-4.webp' }
+        ];
+
+        function renderProjects() {
+            const container = document.getElementById('projectsContainer');
+            if (!container) return;
+            container.innerHTML = projects.map((item, index) => `
+                <div class="project-card" data-aos="fade-up" data-aos-delay="${index * 100}">
+                    <img src="${item.img}" alt="${item.name}" loading="lazy">
+                    <div class="info">
+                        <h3>${item.name}</h3>
+                        <p style="color:#C49A6C; font-weight:500;">${item.category}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // =========================================
+        // 4. Testimonials Slider
+        // =========================================
+        const testimonials = [
+            { name: 'أمل عبدالله', city: 'جدة', text: 'أثاث راقي وخامات ممتازة، خدمة التوصيل كانت سريعة جداً.', avatar: 'assets/images/avatars/avatar-1.webp' },
+            { name: 'خالد الفهد', city: 'الرياض', text: 'التصاميم العصرية جعلت منزلي يبدو فاخراً، ودقة التنفيذ رائعة.', avatar: 'assets/images/avatars/avatar-2.webp' },
+            { name: 'سارة المنصور', city: 'الخبر', text: 'رائع! استشارة مجانية ساعدتني في اختيار قطع تتوافق مع مساحة بيتي.', avatar: 'assets/images/avatars/avatar-3.webp' }
+        ];
+
+        let currentSlide = 0;
+        let slideInterval;
+
+        function renderTestimonials() {
+            const container = document.getElementById('sliderContainer');
+            if (!container) return;
+            container.innerHTML = testimonials.map(item => `
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p style="font-size:1.1rem; margin:1rem 0;">"${item.text}"</p>
+                    <div class="client">
+                        <img src="${item.avatar}" alt="${item.name}">
+                        <div><strong>${item.name}</strong><br><span style="color:#777; font-size:0.9rem;">${item.city}</span></div>
+                    </div>
+                </div>
+            `).join('');
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const container = document.getElementById('sliderContainer');
+            if (!container) return;
+            const total = container.children.length;
+            if (total === 0) return;
+            // Wrap currentSlide
+            if (currentSlide >= total) currentSlide = 0;
+            if (currentSlide < 0) currentSlide = total - 1;
+            container.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+            const container = document.getElementById('sliderContainer');
+            if (!container) return;
+            const total = container.children.length;
+            currentSlide = (currentSlide + 1) % total;
+            updateSlider();
+            resetInterval();
+        }
+
+        function prevSlide() {
+            const container = document.getElementById('sliderContainer');
+            if (!container) return;
+            const total = container.children.length;
+            currentSlide = (currentSlide - 1 + total) % total;
+            updateSlider();
+            resetInterval();
+        }
+
+        function resetInterval() {
+            if (slideInterval) clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 6000);
+        }
+
+        // =========================================
+        // 5. FAQ Accordion
+        // =========================================
+        const faqs = [
+            { q: 'ما هي مدة التوصيل؟', a: 'نوصل لكافة مناطق المملكة خلال 3-7 أيام عمل بعد التصنيع.' },
+            { q: 'هل توفرون خدمة التركيب؟', a: 'نعم، فريق متخصص يقوم بالتركيب المجاني لجميع القطع.' },
+            { q: 'هل يمكن تغيير لون القطعة؟', a: 'بالتأكيد، نوفر أكثر من 20 لوناً حسب الطلب.' }
+        ];
+
+        function renderFAQ() {
+            const container = document.getElementById('faqContainer');
+            if (!container) return;
+            container.innerHTML = faqs.map((item, index) => `
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="${index * 80}">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>${item.q}</span>
+                        <i class="fas fa-chevron-down" style="transition: transform 0.3s;"></i>
+                    </div>
+                    <div class="faq-answer">${item.a}</div>
+                </div>
+            `).join('');
+        }
+
+        function toggleFaq(element) {
+            const parent = element.closest('.faq-item');
+            if (!parent) return;
+            // Close others
+            document.querySelectorAll('.faq-item').forEach(el => {
+                if (el !== parent) el.classList.remove('active');
+            });
+            parent.classList.toggle('active');
+        }
+
+        // =========================================
+        // 6. Back to Top Button
+        // =========================================
+        function setupBackToTop() {
+            const btn = document.getElementById('backToTop');
+            if (!btn) return;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    btn.classList.add('show');
+                } else {
+                    btn.classList.remove('show');
+                }
+            });
+            btn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // =========================================
+        // 7. Slider Controls
+        // =========================================
+        function setupSliderControls() {
+            const prevBtn = document.querySelector('.slider-btn.prev');
+            const nextBtn = document.querySelector('.slider-btn.next');
+            if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+            if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+        }
+
+        // =========================================
+        // 8. Initialize All
+        // =========================================
+        document.addEventListener('DOMContentLoaded', function() {
+            renderGallery();
+            renderProjects();
+            renderTestimonials();
+            renderFAQ();
+            setupBackToTop();
+            setupSliderControls();
+            resetInterval();
+
+            // تأكد من إعادة تهيئة AOS بعد إضافة العناصر الديناميكية
+            setTimeout(() => {
+                AOS.refresh();
+            }, 200);
+        });
+
+        // =========================================
+        // 9. احتياطي: إذا لم يتم تحميل AOS
+        // =========================================
+        window.addEventListener('load', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        });
+    </script>
+
+    <!-- Fallback for AOS if not loaded -->
+    <noscript>
+        <style>
+            [data-aos] {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
 </body>
 </html>
