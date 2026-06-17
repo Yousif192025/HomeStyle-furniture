@@ -25,7 +25,7 @@
   <meta property="og:url"         content="https://yousif192025.github.io/HomeStyle-furniture/">
   <meta property="og:title"       content="HomeStyle Furniture | أثاث منزلي فاخر">
   <meta property="og:description" content="أثاث منزلي فاخر مصنوع بخامات طبيعية وتصميم حسب الطلب. جودة استثنائية وضمان شامل.">
-  <meta property="og:image"       content="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800">
+  <meta property="og:image"       content="assets/images/hero/hero-living-room.webp">
   <meta property="og:image:width" content="1600">
   <meta property="og:image:height" content="1200">
   <meta property="og:image:alt"   content="غرفة معيشة بأثاث HomeStyle الفاخر">
@@ -37,7 +37,15 @@
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="HomeStyle Furniture | أثاث منزلي فاخر">
   <meta name="twitter:description" content="أثاث منزلي فاخر مصنوع بخامات طبيعية وتصميم حسب الطلب.">
-  <meta name="twitter:image"       content="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800">
+  <meta name="twitter:image"       content="assets/images/hero/hero-living-room.webp">
+
+  <!-- ═══════════════════════════════════════════════
+       FAVICONS & MANIFEST
+  ════════════════════════════════════════════════ -->
+  <link rel="icon"             type="image/svg+xml" href="assets/favicon/favicon.svg">
+  <link rel="icon"             type="image/x-icon"  href="assets/favicon/favicon.ico">
+  <link rel="apple-touch-icon"                      href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest"                              href="manifest.json">
 
   <!-- ═══════════════════════════════════════════════
        FONTS
@@ -46,15 +54,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@500;700&family=Tajawal:wght@300;400;500;700&display=swap">
 
+  <!-- Preload hero image for LCP -->
+  <link rel="preload" as="image" href="assets/images/hero/hero-living-room.webp" type="image/webp">
+
   <!-- ═══════════════════════════════════════════════
        AOS LIBRARY (Animate On Scroll)
   ════════════════════════════════════════════════ -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- ═══════════════════════════════════════════════
-       FONT AWESOME 6 (مجاني)
+       FONT AWESOME 6
   ════════════════════════════════════════════════ -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- ═══════════════════════════════════════════════
+       STYLESHEET
+  ════════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- ═══════════════════════════════════════════════
        CRITICAL CSS (المحسن)
@@ -1020,12 +1036,12 @@
         </a>
 
         <ul class="nav-links" id="navLinks" role="list">
-          <li><a href="#features" data-aos="fade-down" data-aos-delay="0">مميزاتنا</a></li>
-          <li><a href="#gallery" data-aos="fade-down" data-aos-delay="50">المعرض</a></li>
-          <li><a href="#projects" data-aos="fade-down" data-aos-delay="100">أعمالنا</a></li>
-          <li><a href="#testimonials" data-aos="fade-down" data-aos-delay="150">آراء العملاء</a></li>
-          <li><a href="#faq" data-aos="fade-down" data-aos-delay="200">الأسئلة الشائعة</a></li>
-          <li><a href="#contact" data-aos="fade-down" data-aos-delay="250">تواصل معنا</a></li>
+          <li><a href="#features">مميزاتنا</a></li>
+          <li><a href="#gallery">المعرض</a></li>
+          <li><a href="#projects">أعمالنا</a></li>
+          <li><a href="#testimonials">آراء العملاء</a></li>
+          <li><a href="#faq">الأسئلة الشائعة</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
         </ul>
 
         <div class="nav-actions">
@@ -1078,7 +1094,7 @@
 
         <div class="hero-media" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
           <div class="hero-media-frame">
-            <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800"
+            <img src="assets/images/hero/hero-living-room.webp"
                  alt="غرفة معيشة فاخرة بأثاث HomeStyle الخشبي العصري"
                  width="800" height="600" fetchpriority="high" loading="eager" decoding="sync">
           </div>
@@ -1191,7 +1207,7 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════
-         GALLERY
+         GALLERY — 12 صورة من assets/images/gallery/
     ════════════════════════════════════════════════ -->
     <section class="section" id="gallery" aria-labelledby="gallery-heading">
       <div class="container">
@@ -1201,35 +1217,59 @@
         </div>
         <div class="gallery-grid">
           <div class="gallery-item" data-aos="fade-up" data-aos-delay="0">
-            <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400" alt="غرفة معيشة مودرن" loading="lazy" decoding="async">
+            <img src="assets/images/gallery/gallery-01.webp" alt="غرفة معيشة مودرن" loading="lazy" decoding="async">
             <div class="gallery-overlay"><span>غرفة معيشة مودرن</span></div>
           </div>
           <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
-            <img src="https://images.pexels.com/photos/1648771/pexels-photo-1648771.jpeg?auto=compress&cs=tinysrgb&w=400" alt="غرفة نوم كلاسيك" loading="lazy" decoding="async">
+            <img src="assets/images/gallery/gallery-02.webp" alt="غرفة نوم كلاسيك" loading="lazy" decoding="async">
             <div class="gallery-overlay"><span>غرفة نوم كلاسيك</span></div>
           </div>
           <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-            <img src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=400" alt="طقم سفرة فاخر" loading="lazy" decoding="async">
+            <img src="assets/images/gallery/gallery-03.webp" alt="طقم سفرة فاخر" loading="lazy" decoding="async">
             <div class="gallery-overlay"><span>طقم سفرة فاخر</span></div>
           </div>
           <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
-            <img src="https://images.pexels.com/photos/6474476/pexels-photo-6474476.jpeg?auto=compress&cs=tinysrgb&w=400" alt="مكتب عصري" loading="lazy" decoding="async">
+            <img src="assets/images/gallery/gallery-04.webp" alt="مكتب عصري" loading="lazy" decoding="async">
             <div class="gallery-overlay"><span>مكتب عصري</span></div>
           </div>
           <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
-            <img src="https://images.pexels.com/photos/1350788/pexels-photo-1350788.jpeg?auto=compress&cs=tinysrgb&w=400" alt="ركنة زاوية" loading="lazy" decoding="async">
+            <img src="assets/images/gallery/gallery-05.webp" alt="ركنة زاوية" loading="lazy" decoding="async">
             <div class="gallery-overlay"><span>ركنة زاوية</span></div>
           </div>
           <div class="gallery-item" data-aos="fade-up" data-aos-delay="250">
-            <img src="https://images.pexels.com/photos/97083/wardrobe-cupboard-closet-luxury-97083.jpeg?auto=compress&cs=tinysrgb&w=400" alt="دريسنج روم" loading="lazy" decoding="async">
+            <img src="assets/images/gallery/gallery-06.webp" alt="دريسنج روم" loading="lazy" decoding="async">
             <div class="gallery-overlay"><span>دريسنج روم</span></div>
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+            <img src="assets/images/gallery/gallery-07.webp" alt="غرفة طعام أنيقة" loading="lazy" decoding="async">
+            <div class="gallery-overlay"><span>غرفة طعام أنيقة</span></div>
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="350">
+            <img src="assets/images/gallery/gallery-08.webp" alt="أريكة مودرن" loading="lazy" decoding="async">
+            <div class="gallery-overlay"><span>أريكة مودرن</span></div>
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+            <img src="assets/images/gallery/gallery-09.webp" alt="غرفة نوم ملكية" loading="lazy" decoding="async">
+            <div class="gallery-overlay"><span>غرفة نوم ملكية</span></div>
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="450">
+            <img src="assets/images/gallery/gallery-10.webp" alt="طاولة طعام خشبية" loading="lazy" decoding="async">
+            <div class="gallery-overlay"><span>طاولة طعام خشبية</span></div>
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="500">
+            <img src="assets/images/gallery/gallery-11.webp" alt="مجلس عربي" loading="lazy" decoding="async">
+            <div class="gallery-overlay"><span>مجلس عربي</span></div>
+          </div>
+          <div class="gallery-item" data-aos="fade-up" data-aos-delay="550">
+            <img src="assets/images/gallery/gallery-12.webp" alt="غرفة معيشة مودرن" loading="lazy" decoding="async">
+            <div class="gallery-overlay"><span>غرفة معيشة مودرن</span></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════════
-         PROJECTS
+         PROJECTS — 12 صورة من assets/images/projects/
     ════════════════════════════════════════════════ -->
     <section class="section section--cream" id="projects" aria-labelledby="projects-heading">
       <div class="container">
@@ -1239,35 +1279,99 @@
         </div>
         <div class="projects-grid">
           <div class="project-card" data-aos="fade-up" data-aos-delay="0">
-            <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400" alt="فيلا الشاطئ" loading="lazy" decoding="async">
+            <img src="assets/images/projects/project-1.webp" alt="فيلا الشاطئ" loading="lazy" decoding="async">
             <div class="project-overlay">
               <span class="project-tag">غرفة معيشة</span>
               <h3>فيلا الشاطئ</h3>
               <p>غرفة معيشة مودرن</p>
             </div>
           </div>
-          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-            <img src="https://images.pexels.com/photos/97083/wardrobe-cupboard-closet-luxury-97083.jpeg?auto=compress&cs=tinysrgb&w=400" alt="قصر اليمامة" loading="lazy" decoding="async">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="50">
+            <img src="assets/images/projects/project-2.webp" alt="قصر اليمامة" loading="lazy" decoding="async">
             <div class="project-overlay">
               <span class="project-tag">دريسنج روم</span>
               <h3>قصر اليمامة</h3>
               <p>دريسنج روم فاخر</p>
             </div>
           </div>
-          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-            <img src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=400" alt="شقة العليا" loading="lazy" decoding="async">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/images/projects/project-3.webp" alt="شقة العليا" loading="lazy" decoding="async">
             <div class="project-overlay">
               <span class="project-tag">غرفة طعام</span>
               <h3>شقة العليا</h3>
               <p>طقم سفرة زجاج</p>
             </div>
           </div>
-          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-            <img src="https://images.pexels.com/photos/1350788/pexels-photo-1350788.jpeg?auto=compress&cs=tinysrgb&w=400" alt="استراحة الساحل" loading="lazy" decoding="async">
+          <div class="project-card" data-aos="fade-up" data-aos-delay="150">
+            <img src="assets/images/projects/project-4.webp" alt="استراحة الساحل" loading="lazy" decoding="async">
             <div class="project-overlay">
               <span class="project-tag">ركنة</span>
               <h3>استراحة الساحل</h3>
               <p>ركنة زاوية مودرن</p>
+            </div>
+          </div>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/images/projects/project-5.webp" alt="فيلا النخيل" loading="lazy" decoding="async">
+            <div class="project-overlay">
+              <span class="project-tag">غرفة معيشة</span>
+              <h3>فيلا النخيل</h3>
+              <p>غرفة معيشة كلاسيك</p>
+            </div>
+          </div>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="250">
+            <img src="assets/images/projects/project-6.webp" alt="شقة الخليج" loading="lazy" decoding="async">
+            <div class="project-overlay">
+              <span class="project-tag">غرفة نوم</span>
+              <h3>شقة الخليج</h3>
+              <p>غرفة نوم رئيسية</p>
+            </div>
+          </div>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="assets/images/projects/project-7.webp" alt="قصر العروس" loading="lazy" decoding="async">
+            <div class="project-overlay">
+              <span class="project-tag">غرفة طعام</span>
+              <h3>قصر العروس</h3>
+              <p>طاولة طعام فاخرة</p>
+            </div>
+          </div>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="350">
+            <img src="assets/images/projects/project-8.webp" alt="فيلا الريف" loading="lazy" decoding="async">
+            <div class="project-overlay">
+              <span class="project-tag">ركنة</span>
+              <h3>فيلا الريف</h3>
+              <p>ركنة عائلية</p>
+            </div>
+          </div>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+            <img src="assets/images/projects/project-9.webp" alt="شقة المروج" loading="lazy" decoding="async">
+            <div class="project-overlay">
+              <span class="project-tag">مكتب منزلي</span>
+              <h3>شقة المروج</h3>
+              <p>مكتب تنفيذي</p>
+            </div>
+          </div>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="450">
+            <img src="assets/images/projects/project-10.webp" alt="فيلا السفارات" loading="lazy" decoding="async">
+            <div class="project-overlay">
+              <span class="project-tag">غرفة معيشة</span>
+              <h3>فيلا السفارات</h3>
+              <p>غرفة معيشة فاخرة</p>
+            </div>
+          </div>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+            <img src="assets/images/projects/project-11.webp" alt="شقة الأندلس" loading="lazy" decoding="async">
+            <div class="project-overlay">
+              <span class="project-tag">غرفة نوم</span>
+              <h3>شقة الأندلس</h3>
+              <p>غرفة نوم كلاسيك</p>
+            </div>
+          </div>
+          <div class="project-card" data-aos="fade-up" data-aos-delay="550">
+            <img src="assets/images/projects/project-12.webp" alt="قصر الصحراء" loading="lazy" decoding="async">
+            <div class="project-overlay">
+              <span class="project-tag">غرفة طعام</span>
+              <h3>قصر الصحراء</h3>
+              <p>طقم سفرة مودرن</p>
             </div>
           </div>
         </div>
@@ -1565,7 +1669,6 @@
         const isOpen = navLinks.classList.toggle('is-open');
         this.setAttribute('aria-expanded', isOpen);
       });
-      // Close on link click (mobile)
       navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function() {
           navLinks.classList.remove('is-open');
@@ -1643,7 +1746,6 @@
       dot.addEventListener('click', () => goToSlide(i));
     });
 
-    // Auto-slide every 6s
     let autoSlide = setInterval(() => goToSlide(currentSlide + 1), 6000);
     const slider = document.querySelector('.testimonials-slider');
     slider?.addEventListener('mouseenter', () => clearInterval(autoSlide));
@@ -1656,7 +1758,6 @@
       btn.addEventListener('click', function() {
         const item = this.closest('.faq-item');
         const isOpen = item.getAttribute('data-open') === 'true';
-        // Close others
         document.querySelectorAll('.faq-item').forEach(el => {
           if (el !== item) el.setAttribute('data-open', 'false');
         });
